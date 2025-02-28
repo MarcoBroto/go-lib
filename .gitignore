@@ -1,0 +1,14 @@
+# System files
+.DS_Store
+*.ini
+
+# Builds
+build/
+dist/
+target/
+
+# Logging
+log/
+logs/
+*.log
+*.log-*
