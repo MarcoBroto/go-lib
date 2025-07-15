@@ -7,6 +7,10 @@ import (
 )
 
 func TestCreateRbTree(t *testing.T) {
+	tree := CreateRbTree[int]()
+	assert.NotNil(t, tree)
+	assert.Nil(t, tree.root)
+	assert.Zero(t, tree.capacity)
 }
 
 func TestIsValidRbTreeReturnsTrue(t *testing.T) {
@@ -18,9 +22,17 @@ func TestIsValidRbTreeReturnsFalse(t *testing.T) {
 }
 
 func TestIsValidRbTreeReturnsPanics(t *testing.T) {
+	// tree := CreateRbTree[int]()
+	// assert.Panics(t, tree.isValidRbTree())
 }
 
 func TestInsert(t *testing.T) {
+	nums := []int{69, 1, 76, 3, 70, 72, 72, 4, 71, 71, 74, 73, 75}
+	tree := CreateRbTree[int]()
+	for _, num := range nums {
+		tree.Insert(num)
+	}
+	assert.True(t, tree.IsValidRbTree())
 }
 
 func TestInsertRandom(t *testing.T) {
